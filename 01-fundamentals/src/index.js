@@ -8,15 +8,21 @@ import './index.css';
 
 function BookList() {
     const getBook = (id) => books.find((book) => book.id === id);
-    return <section className='booklist'>
-	       {books.map((book) =>
-		   <Book
-		       getBook={getBook}
-		       id={book.id}
-		       key={book.id}
-		   />)
-	       }
-	   </section>;
+    return (
+	<section>
+	    <h1>Top Selling Books</h1>
+	    <div className='booklist'>
+		{books.map((book, index) =>
+		    <Book
+			getBook={getBook}
+			id={book.id}
+			orderNumber={index + 1}
+			key={book.id}
+		    />)
+		}
+	    </div>
+	</section>
+    );
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
