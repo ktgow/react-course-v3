@@ -25,11 +25,13 @@ const books = [
 ];
 
 function BookList() {
+    const getBook = (id) => books.find((book) => book.id === id);
     return <section className='booklist'>
 	       <EventExamples/>
 	       {books.map((book) =>
 		   <Book
-		       {...book}
+		       getBook={getBook}
+		       id={book.id}
 		       key={book.id}
 		   />)
 	       }
@@ -65,14 +67,12 @@ function EventExamples() {
     );
 }
 
-function Book({img, title, author, children}) {
-    const handleButtonClick = () => {
-	alert('button click');
-    };
+function Book({getBook, id, children}) {
+    const book = getBook(id);
+    const {img, title, author} = book;
     return (
 	<article
 	    className='book'
-	    onClick={handleButtonClick}
 	>
 	    <img src={img} alt={title} />
 	    <h2>{title}</h2>
