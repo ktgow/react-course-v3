@@ -1,4 +1,4 @@
-import Exercise1 from './tutorial/01-useState/starter/03-useState-array.jsx'
+import Exercise1 from './tutorial/01-useState/starter/05-useState-gotcha'
 
 function App() {
   return (
