@@ -1,10 +1,10 @@
-import Exercise1 from './tutorial/01-useState/starter/05-useState-gotcha'
+import Exercise from './tutorial/02-useEffect/starter/05-cleanup-function.jsx'
 
 function App() {
   return (
     <div className='container'>
       <h2>Advanced React</h2>
-      <Exercise1 />
+      <Exercise />
     </div>
   );
 }
