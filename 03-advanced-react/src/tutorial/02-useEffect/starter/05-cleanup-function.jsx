@@ -12,14 +12,12 @@ const CleanupFunction = () => {
 const SomeComponent = () => {
   useEffect(() => {
     console.log('Rendering SomeComponent.');
-    const intervalId = setInterval(() => {
-      console.log('Interval triggered.');
-    }, 1000);
+    const someFunc = () => {
+      console.log('Called someFunc');
+    }
+    window.addEventListener('scroll', someFunc);
 
-    return () => {
-      console.log('Clearing interval', intervalId);
-      clearInterval(intervalId);
-    };
+    return () => window.removeEventListener('scroll', someFunc);
   }, []);
   return <div>Hello</div>;
 };
